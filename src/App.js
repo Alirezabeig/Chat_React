@@ -3,7 +3,7 @@ import AddMessage from './components/AddMessage';
 import ChatWindow from './components/ChatWindow';
 import MessageHistory from './components/MessageHistory'
 
-
+const users = [{ username: 'Amy' }, { username: 'Jon' }];
 
 class App extends Component {
 
@@ -22,18 +22,24 @@ class App extends Component {
   }
 
   render (){
-
+    const {messages} = this.state
 
     return (
       <div className="App">
-       <AddMessage/>
-       <ChatWindow/>
-       <MessageHistory/>
+
+      {users.map(user => (
+        <ChatWindow
+        key={users.username}
+        user={user}
+        messages={messages}
+        onMessage={this.onMessage}
+        />
+
+      ))}
+
       </div>
     );
-
   }
-
 }
 
 export default App;
