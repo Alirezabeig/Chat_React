@@ -1,4 +1,5 @@
 import React , { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class AddMessage extends Component {
 
@@ -8,9 +9,7 @@ class AddMessage extends Component {
 
 handleSubmit = event => {
   event.preventDefault();
-
   this.props.onMessage(this.state.message)
-
 }
 
 handleInputChange = event => {
@@ -20,8 +19,6 @@ handleInputChange = event => {
  }));
 
 }
-
-
   render () {
 
     const {message} = this.state
@@ -44,6 +41,10 @@ handleInputChange = event => {
 
   }
 }
+
+AddMessage.propTypes = {
+ onMessage : PropTypes.func.isRequired,
+};
 
 
 export default AddMessage;
