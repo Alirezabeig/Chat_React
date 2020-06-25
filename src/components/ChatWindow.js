@@ -11,9 +11,10 @@ class ChatWindow extends Component {
 
   render () {
     const {messages, user} = this.props;
-    
+
     return (
       <div>
+      <div>{user.username}</div>
       <MessageHistory messages={messages} user={user} />
        <AddMessage onMessage={this.onMessage} />
      </div>
