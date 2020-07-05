@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project build using React.
+It is a simple 2 people chat.
 
 ## Available Scripts
 
